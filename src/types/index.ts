@@ -42,6 +42,7 @@ export interface PropertyListing {
 }
 
 export interface PropertyFilterState {
+  searchQuery?: string;
   purpose: 'all' | PropertyPurpose;
   district: string;
   type: 'all' | PropertyType;
@@ -56,9 +57,12 @@ export interface PropertyFilterState {
 export interface ContactFormData {
   fullName: string;
   phone: string;
-  email: string;
-  inquiryType: 'buying' | 'selling' | 'renting' | 'management' | 'general';
+  email?: string;
+  inquiryType: string;
+  preferredDistrict?: string;
+  budgetRange?: string;
   message: string;
   propertyId?: string;
+  propertyTitle?: string;
   preferredDate?: string;
 }

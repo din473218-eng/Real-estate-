@@ -8,7 +8,7 @@ interface LanguageContextType {
   isRtl: boolean;
   toggleLanguage: () => void;
   setLanguage: (lang: Language) => void;
-  t: typeof translations.en;
+  t: typeof translations.ar;
   formatCurrency: (amount: number, rentalPeriod?: 'year' | 'month') => string;
   formatNumber: (value: number) => string;
 }
@@ -16,7 +16,14 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [lang, setLang] = useState<Language>('en');
+  // Requirement: Start in Arabic for the initial demo and remember the visitor's language selection
+  const [lang, setLang] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('preferred_language') as Language | null;
+      if (saved === 'en' || saved === 'ar') return saved;
+    }
+    return 'ar'; // Default to Arabic
+  });
 
   const dir: 'ltr' | 'rtl' = lang === 'ar' ? 'rtl' : 'ltr';
   const isRtl = lang === 'ar';
@@ -24,6 +31,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = dir;
+    localStorage.setItem('preferred_language', lang);
+
+    // Update document title and meta description
+    const title = lang === 'ar'
+      ? 'اسم شركتك العقارية – منصة العقارات الفاخرة في الرياض'
+      : 'YOUR REAL ESTATE – Luxury Properties in Riyadh';
+    const desc = lang === 'ar'
+      ? 'استكشف أرقى الفلل والشقق والمساحات التجارية في الرياض. منصة نموذجية متكاملة لخدمات الوساطة والتسويق العقاري.'
+      : 'Explore distinctive homes, commercial spaces, and land across Riyadh. A luxury real estate presentation platform.';
+
+    document.title = title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', desc);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', desc);
+
     if (lang === 'ar') {
       document.body.classList.add('font-arabic');
       document.body.classList.remove('font-sans');
@@ -34,7 +59,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [lang, dir]);
 
   const toggleLanguage = () => {
-    setLang((prev) => (prev === 'en' ? 'ar' : 'en'));
+    setLang((prev) => (prev === 'ar' ? 'en' : 'ar'));
   };
 
   const setLanguage = (newLang: Language) => {
