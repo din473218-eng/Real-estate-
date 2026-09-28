@@ -42,8 +42,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         isTransparent
-          ? 'bg-transparent text-white border-b border-white/10 backdrop-blur-xs'
-          : 'bg-[#F7F5F0]/95 backdrop-blur-md text-[#202A30] border-b border-[#E8E4DC] shadow-xs'
+          ? 'bg-gradient-to-b from-[#13232D]/90 to-transparent text-white border-b border-white/10 backdrop-blur-xs'
+          : 'bg-[#F7F5F0] text-[#13232D] border-b border-[#E8E4DC] shadow-xs'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between gap-4">
@@ -71,10 +71,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   isTransparent
                     ? isActive
                       ? 'text-white font-semibold'
-                      : 'text-white/80 hover:text-white'
+                      : 'text-white/90 hover:text-white'
                     : isActive
-                      ? 'text-[#13232D] font-semibold'
-                      : 'text-[#4A5964] hover:text-[#13232D]'
+                      ? 'text-[#13232D] font-bold'
+                      : 'text-[#13232D] hover:text-[#B49765] font-semibold'
                 }`}
               >
                 {link.label}
@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors border focus-visible:outline-2 cursor-pointer ${
               isTransparent
                 ? 'bg-white/10 hover:bg-white/20 border-white/20 text-white'
-                : 'bg-[#E8E4DC]/60 hover:bg-[#E8E4DC] border-[#D8D2C5] text-[#13232D]'
+                : 'bg-[#E8E4DC] hover:bg-[#DCD5C6] border-[#D8D2C5] text-[#13232D]'
             }`}
             title={lang === 'ar' ? 'Switch to English' : 'التحويل إلى العربية'}
             aria-label={lang === 'ar' ? 'Switch to English' : 'التحويل إلى العربية'}
@@ -150,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#E8E4DC] bg-[#F7F5F0] text-[#202A30] px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-150">
+        <div className="md:hidden border-t border-[#E8E4DC] bg-[#F7F5F0] text-[#13232D] px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-150">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => {
               const isActive = currentPage === link.id;
@@ -158,10 +158,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 <button
                   key={link.id}
                   onClick={() => handleLinkClick(link.id)}
-                  className={`text-left rtl:text-right px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                  className={`text-left rtl:text-right px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
                     isActive
-                      ? 'bg-[#E8E4DC] text-[#13232D] font-semibold'
-                      : 'text-[#4A5964] hover:bg-[#EDE9E1] hover:text-[#13232D]'
+                      ? 'bg-[#E8E4DC] text-[#13232D]'
+                      : 'text-[#13232D] hover:bg-[#EDE9E1]'
                   }`}
                 >
                   {link.label}

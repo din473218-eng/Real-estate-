@@ -16,11 +16,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   const { lang, t } = useLanguage();
 
   const serviceImages = [
-    '/src/assets/images/hero_riyadh_villa_1790553255457.jpg',
-    '/src/assets/images/apartment_kafd_penthouse_1790553278890.jpg',
-    '/src/assets/images/commercial_olaya_tower_1790553287935.jpg',
-    '/src/assets/images/villa_interior_living_1790553308957.jpg',
-    '/src/assets/images/commercial_kafd_office_1790553358459.jpg',
+    '/images/hero_riyadh_villa_1790553255457.jpg',
+    '/images/apartment_kafd_penthouse_1790553278890.jpg',
+    '/images/commercial_olaya_tower_1790553287935.jpg',
+    '/images/villa_interior_living_1790553308957.jpg',
+    '/images/commercial_kafd_office_1790553358459.jpg',
   ];
 
   return (

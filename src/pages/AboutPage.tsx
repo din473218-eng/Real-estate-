@@ -59,7 +59,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <div className="lg:col-span-5">
           <div className="relative aspect-4/3 sm:aspect-5/4 rounded-2xl overflow-hidden shadow-lg border border-[#E8E4DC] bg-[#FAF5EB]">
             <ImageWithFallback
-              src="/src/assets/images/about_arch_riyadh_1790553298984.jpg"
+              src="/images/about_arch_riyadh_1790553298984.jpg"
               alt="Architectural limestone facade in Riyadh"
               fallbackTitle="Modern Riyadh Architecture"
               className="w-full h-full object-cover"
@@ -143,7 +143,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8E4DC]">
           <ImageWithFallback
-            src="/src/assets/images/villa_hittin_modern_1790553268044.jpg"
+            src="/images/villa_hittin_modern_1790553268044.jpg"
             alt="Contemporary Architecture in Hittin"
             fallbackTitle="Villa in Hittin"
             className="w-full h-full object-cover"

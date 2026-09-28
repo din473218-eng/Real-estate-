@@ -73,17 +73,18 @@ export const HomePage: React.FC<HomePageProps> = ({
   return (
     <div className="space-y-24 sm:space-y-36">
       {/* 1. Hero Section (~85vh desktop, natural mobile height) */}
-      <section className="relative min-h-[580px] lg:min-h-[85vh] flex flex-col justify-between pt-12 pb-24 sm:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-[600px] lg:min-h-[88vh] -mt-20 sm:-mt-22 flex flex-col justify-between pt-28 sm:pt-36 pb-24 sm:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#13232D]">
         {/* Large Architectural Photograph with subtle dark overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-[#13232D]">
           <ImageWithFallback
-            src="/src/assets/images/hero_riyadh_villa_1790553255457.jpg"
+            src="/images/hero_riyadh_villa_1790553255457.jpg"
             alt="Contemporary luxury villa in Riyadh"
             fallbackTitle="Luxury Villa in Riyadh"
+            darkFallback
             className="w-full h-full object-cover object-center"
           />
-          {/* Subtle dark overlay for readability without obscuring architecture */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#13232D]/95 via-[#13232D]/75 to-[#13232D]/55" />
+          {/* Dark overlay ensuring rich contrast for hero typography and header */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#13232D]/95 via-[#13232D]/80 to-[#13232D]/70" />
         </div>
 
         {/* Hero Content Container */}
@@ -290,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             className="group cursor-pointer relative aspect-4/3 rounded-xl overflow-hidden shadow-xs border border-[#E8E4DC]"
           >
             <ImageWithFallback
-              src="/src/assets/images/villa_hittin_modern_1790553268044.jpg"
+              src="/images/villa_hittin_modern_1790553268044.jpg"
               alt="Luxury Villas"
               fallbackTitle="Villas"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -314,7 +315,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             className="group cursor-pointer relative aspect-4/3 rounded-xl overflow-hidden shadow-xs border border-[#E8E4DC]"
           >
             <ImageWithFallback
-              src="/src/assets/images/apartment_kafd_penthouse_1790553278890.jpg"
+              src="/images/apartment_kafd_penthouse_1790553278890.jpg"
               alt="Luxury Apartments"
               fallbackTitle="Apartments"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -338,7 +339,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             className="group cursor-pointer relative aspect-4/3 rounded-xl overflow-hidden shadow-xs border border-[#E8E4DC]"
           >
             <ImageWithFallback
-              src="/src/assets/images/district_alnarjis_1790554513083.jpg"
+              src="/images/district_alnarjis_1790554513083.jpg"
               alt="Residential Land"
               fallbackTitle="Land"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -362,7 +363,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             className="group cursor-pointer relative aspect-4/3 rounded-xl overflow-hidden shadow-xs border border-[#E8E4DC]"
           >
             <ImageWithFallback
-              src="/src/assets/images/commercial_olaya_tower_1790553287935.jpg"
+              src="/images/commercial_olaya_tower_1790553287935.jpg"
               alt="Commercial & Office"
               fallbackTitle="Commercial"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -389,7 +390,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="lg:col-span-6">
             <div className="relative aspect-4/3 sm:aspect-16/10 rounded-xl overflow-hidden bg-[#E8E4DC]">
               <ImageWithFallback
-                src="/src/assets/images/about_arch_riyadh_1790553298984.jpg"
+                src="/images/about_arch_riyadh_1790553298984.jpg"
                 alt="Contemporary architecture in Riyadh"
                 fallbackTitle="Architectural Clarity"
                 className="w-full h-full object-cover"
