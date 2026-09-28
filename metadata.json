@@ -1,0 +1,6 @@
+{
+  "name": "YOUR REAL ESTATE – Riyadh Luxury Properties Demo",
+  "description": "A premium real estate demonstration platform for luxury residential, commercial, and investment spaces across Riyadh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
